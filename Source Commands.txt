@@ -1,0 +1,9 @@
+source C:\Users\Matth\Desktop\createtables.txt 
+
+source C:\Users\Matth\Desktop\populatetables.txt
+
+
+UI working
+UI interacting with database
+Ensure all functions of the app work correctly
+Images for items........

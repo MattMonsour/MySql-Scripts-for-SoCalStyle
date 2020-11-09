@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
+
+
+namespace DatabasePopulater
+{
+    class Program
+    {        static void Main(string[] args)
+        {            
+            string[] colorid = new string[] { "red", "yellow", "white", "blue", "black" };
+            string[] sizeid = new string[] {"xsmall", "small", "medium", "large", "xlarge", "xxlarge"};
+            string[] typeid = new string[] {"tanktop", "tshirt", "vneck", "hoodie", "zipup", "sweater"};
+            string[] sexid = new string[] { "male", "female" };
+            string[] designid = new string[] {"tiger", "socal", "barrens", "woman1", "black", "white", "pink"};       
+           
+            foreach(string element in colorid)
+            {
+
+                foreach(string element2 in sizeid)
+                {
+                    foreach(string element3 in typeid)
+                    {                 
+
+                        foreach (string element4 in sexid)
+                        {
+                            foreach(string element5 in designid)
+                            {
+
+                                pushInserts(element,element2,element3,element4,element5);
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        static void pushInserts(string colorid, string sizeid, string typeid, string sexid, string designid)
+        {
+            string connectionString = null;
+            SqlConnection connection;
+            SqlCommand command;
+            string sql = null;
+
+            connectionString = "server=localhost;database=socal;uid=root;pwd=WickeD44$$;";
+
+            sql = "INSERT INTO ITEM(COLORID, SIZEID, TYPEID, SEXID, DESIGNID) " +
+                "VALUES(" + colorid + ", " + sizeid + "," + typeid + "," + sexid + "," + designid + ");";
+
+            connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                command.Dispose();
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Can not open connection ! ");
+            }
+        }
+        static void trueConnect()
+        {
+            MySql.Data.MySqlClient.MySqlConnection conn;
+            string myConnectionString;
+
+            myConnectionString = "server=localhost;uid=root;" +
+                "pwd=WickeD44$$;database=socal";
+
+            try
+            {
+                conn = new MySql.Data.MySqlClient.MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();                
+            }
+            catch (MySql.Data.MySqlClient.MySqlException)
+            {
+                Console.WriteLine("Can not open connection ! ");
+            }
+        }           
+               
+    }
+}

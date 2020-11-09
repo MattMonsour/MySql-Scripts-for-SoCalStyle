@@ -1,0 +1,149 @@
+newCustomer(string fname, string lname, string phonenumber, string email, string password)
+{
+     INSERT INTO	
+     CUSTOMER (FNAME, LNAME, PHONENUMBER, EMAILADRESS)
+     VALUES (" + FNAME + ", " + LNAME + " , " + PHONENUMBER + ", " + EMAIL + " , " + PASSWORD + "); 
+};
+
+int inStock = SELECT QUANTITY FROM QUANTITY WHERE ITEM." + ITEMID + " = ITEM.ITEMID;
+
+updateStock(INT ITEMID, INT QUANTITY)
+}
+      UPDATE QUANTITY SET QUANTITY = QUANTITY.QUANTITY - " + VARIABLETOCHANGEQUANTITY + " WHERE QUANTITY.TSHIRTID = TSHIRT.TSHIRTID;
+};
+
+SELECT PRICE FROM TSHIRTTYPE WHERE TSHIRT.TSHIRTID = TSHIRTTYPE.TSHIRTID;
+
+insertReview(INT CUSTOMERID, INT STARS, STRING REVIEWTEXT)
+{
+      INSERT INTO REVIEW (CUSTOMERID, STARS, REVIEWTEXT) 
+      VALUES (" +  CUSTOMERID + " , " + STARS + " , " + REVIEWTEXT + ");
+}
+
+insertReview(INT CUSTOMERID, INT DATE, INT ITEMID, INT QUANTITY)
+{
+     INSERT INTO TRANSACTIONS (CUSTOMERID, DATE, ITEMID, QUANTITY)
+     VALUES(" + CUSTOMERID + "," + DATE + "," + ITEMID + ", + QUANTITY + ");
+}
+
+STRING FILEPATH = SELECT FILEPATH FROM ITEM WHERE " + ITEMID + " = ITEM.ITEMID;
+
+checkLogin(string email, string password)
+{
+     "IF QUEUERY SUCCEEDS IN GRABING A CUSTOMERS ID...RETURN CUSTOMERID"
+      loggedincustomer = "select customerid from customer where emailtextbox = customer.email and passwordtextbox = customer.password;";
+      "ELSE, RETURN AN ERROR MESSAGE AND PROMPT USER TO TRY AND LOG IN AGAIN"
+}
+
+insertIntoCart(INT CUSTOMERID, INT ITEMID, INT QUANTITY)
+{
+     INSERT INTO CART (CUSTOMERID, ITEMID, QUANTITY)
+     VALUES(" + CUSTOMERID + "," + ITEMID + "," + QUANTITY + ");
+}
+
+newUser(string fname, string lname, string phonenumber, string email, string password)
+{
+     INSERT INTO	
+     CUSTOMER (FNAME, LNAME, PHONENUMBER, EMAILADRESS)
+     VALUES (" + FNAME + ", " + LNAME + " , " + PHONENUMBER + ", " + EMAIL + " , " + PASSWORD + "); 
+};
+
+int inStock = SELECT QUANTITY FROM QUANTITY WHERE ITEM." + ITEMID + " = ITEM.ITEMID;
+
+updateStock(INT ITEMID, INT QUANTITY)
+}
+      UPDATE QUANTITY SET QUANTITY = QUANTITY.QUANTITY - " + VARIABLETOCHANGEQUANTITY + " WHERE QUANTITY.TSHIRTID = TSHIRT.TSHIRTID;
+};
+
+SELECT PRICE FROM TSHIRTTYPE WHERE TSHIRT.TSHIRTID = TSHIRTTYPE.TSHIRTID;
+
+insertReview(INT CUSTOMERID, INT STARS, STRING REVIEWTEXT)
+{
+      INSERT INTO REVIEW (CUSTOMERID, STARS, REVIEWTEXT) 
+      VALUES (" +  CUSTOMERID + " , " + STARS + " , " + REVIEWTEXT + ");
+}
+
+insertReview(INT CUSTOMERID, INT DATE, INT ITEMID, INT QUANTITY)
+{
+     INSERT INTO TRANSACTIONS (CUSTOMERID, DATE, ITEMID, QUANTITY)
+     VALUES(" + CUSTOMERID + "," + DATE + "," + ITEMID + ", + QUANTITY + ");
+}
+
+STRING FILEPATH = SELECT FILEPATH FROM ITEM WHERE " + ITEMID + " = ITEM.ITEMID;
+
+checkLogin(string email, string password)
+{
+     "IF QUEUERY SUCCEEDS IN GRABING A CUSTOMERS ID...RETURN CUSTOMERID"
+      loggedincustomer = "select customerid from customer where emailtextbox = customer.email and passwordtextbox = customer.password;";
+      "ELSE, RETURN AN ERROR MESSAGE AND PROMPT USER TO TRY AND LOG IN AGAIN"
+}
+
+insertIntoCart(INT CUSTOMERID, INT ITEMID, INT QUANTITY)
+{
+     INSERT INTO CART (CUSTOMERID, ITEMID, QUANTITY)
+     VALUES(" + CUSTOMERID + "," + ITEMID + "," + QUANTITY + ");
+}
+
+dynamicSearchingMethod()
+{
+     SELECT FILEPATH FROM ITEM WHERE " + SIZE + " = ITEM.SIZE AND 
+}
+	DEPENDING ON THE SELECTED FILTERS WE CAN CHANGE THE SELECT STATEMENT. 1 FILTER -> 2 FILTER ETC.
+
+	^^^ POLYMORPHISM TO CHANGE THE SELECT STATEMENT TO FILL ALL THE AND WHERE X = Y ^^^
+
+totalPriceOfCart()
+{    
+INT QTY;
+DOUBLE PRICE, SUBTOTAL;
+INT COUNT;
+
+FOR(I=0;I>=COUNT;I++)
+  { 
+     QTY = SELECT QUANTITY FROM CART WHERE CUSTOMERID = CART.CUSTOMERID AND ITEMID = CART.ITEMID;
+     PRICE = SELECT PRICE FROM ITEM WHERE ITEMID = ITEM.ITEMID;
+     SUBTOTAL = QTY * PRICE
+  }
+     RETURN TOTAL;
+}
+
+"""SELECT PRICE AND QTY FROM ALL LINES WHERE CUSTOMER SIGNED IN = CART.CUSTOMER ID"""
+"""MULTIPLY THE QTY BY THE PRICE THEN FIND SUM RETURN TOTAL"""
+
+	NEW FROM SEMESTER 2
+
+transactionHistoryInsertQuery(int customerid1, string date1, int itemid1, string price1)
+{
+	INSERT INTO TRANSACTIONHISTORY(CUSTOMERID, DATE, ITEMID, PRICE) VALUES (customerid1, date1, itemid1, price1);
+}
+
+"""inserts all of the contents of a purchase of the user to be called upon later"""
+
+getPurchaseHistory(int customerid1)
+{
+	SELECT * FROM TRANSACTIONHISTORY where CUSTOMERID = customerid1;
+}
+
+"""selects all from a users transaction history based on their user id/if need be we can implement based on date also"""
+
+getPurchaseHistory(int customerid1, string date1)
+{
+	SELECT * FROM TRANSACTIONHISTORY WHERE CUSTOMERID = customerid1 and DATE = date1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
